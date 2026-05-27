@@ -1,10 +1,10 @@
 
-### Approach
+/* Approach
 
 Count the number of 0s, 1s, and 2s, then place them back into the array in sorted order.
 
 Time Complexity: O(n)
-Space Complexity: O(1)
+Space Complexity: O(1)*/
 
 
 class Solution {
