@@ -1,3 +1,8 @@
+// LeetCode 15. 3Sum
+// Approach: Hash Set + Set for Unique Triplets
+// Time Complexity: O(n² log n)
+// Space Complexity: O(n) (excluding the output vector)
+
 class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
