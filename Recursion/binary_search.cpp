@@ -1,3 +1,9 @@
+/*
+    Problem: Binary Search (Recursive)
+    Time Complexity: O(log n)
+    Space Complexity: O(log n)
+*/
+
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -10,7 +16,7 @@ int binary_search(vector<int>vec, int target, int start, int end)
 
     if(vec[mid] == target) return mid;
 
-    else if(vec[mid] <= target){
+    else if(vec[mid] < target){
       return binary_search(vec, target, mid+1, end);
     }
 
