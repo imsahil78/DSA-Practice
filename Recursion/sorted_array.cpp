@@ -9,7 +9,7 @@ using namespace std;
 bool is_sorted(vector<int> vec, int n){
 
   if(n == 1 || n == 0){
-    return true;
+    return true;`
   }
 
   return vec[n - 1] >= vec[n - 2] && is_sorted( vec, n-1) ;
