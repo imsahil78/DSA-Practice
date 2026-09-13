@@ -1,32 +1,22 @@
-// Problem: Count Inversions
-
-// Approach: Merge Sort
-
-// Time Complexity: O(N log N)
-
-// Space Complexity: O(N)
-
 #include <iostream>
 #include <vector>
 using namespace std;
 
-int merge(vector<int> &vec, int start, int mid, int end)
+void merge(vector<int> &vec, int start, int mid, int end)
 {
   vector<int> temp;
   int i = start;
   int j = mid + 1;
-  int count = 0;
 
   while(i <= mid && j <= end){
-    if(vec[i] <= vec[j]){
+    if(vec[i] < vec[j]){
       temp.push_back(vec[i]);
       i++;
     }
     else{
       temp.push_back(vec[j]);
       j++;
-      count += mid - i + 1;
-    } 
+    }
 
   }
 
@@ -42,24 +32,22 @@ int merge(vector<int> &vec, int start, int mid, int end)
   for(int index=0; index<temp.size(); index++){
     vec[start + index] = temp[index] ;
   }
-  return count;
+
 }
 
-int mergesort(vector<int> &vec, int start, int end)
+void mergesort(vector<int> &vec, int start, int end)
 {
   if(start >= end){
-    return 0 ;
+    return ;
   }
 
     int mid = start + (end - start)/2;
 
-    int left = mergesort(vec, start, mid); // leftside
+    mergesort(vec, start, mid); // leftside
 
-    int right = mergesort(vec, mid+1, end); // Rightside
+    mergesort(vec, mid+1, end); // Rightside
 
-    int merge_count = merge(vec, start, mid, end);
-
-    return left + right + merge_count ;
+    merge(vec, start, mid, end);
 
   }
 
@@ -67,8 +55,15 @@ int mergesort(vector<int> &vec, int start, int end)
 int main(){
 
   vector<int> vec = {3, 5, 7, 1};
-  int count = mergesort(vec, 0, vec.size() - 1);
-  cout << count ;
+  mergesort(vec, 0, vec.size() - 1);
+
+  for(int i=0; i<vec.size(); i++){
+    cout << vec[i] << " ";
+  }
+
+
+
+
 
   return 0;
 }
