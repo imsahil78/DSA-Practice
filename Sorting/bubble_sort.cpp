@@ -3,7 +3,7 @@
 // Space Complexity: O(1)
 
 
-#include <iostream>
+#include <cstdio>
 #include <vector>
 using namespace std;
 
@@ -35,7 +35,7 @@ bubble_sort(vec) ;
 for( int x : vec )
 
 {
-  cout << x << endl ;
+  printf("%d\n", x) ;
 }
 
   return 0;
