@@ -1,4 +1,10 @@
+// Problem: Flatten a Multilevel Doubly Linked List
 
+// Approach: Recursion
+
+// Time Complexity: O(N²)
+
+// Space Complexity: O(N)
 
 class Solution {
 public:
