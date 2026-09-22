@@ -1,3 +1,8 @@
+// Problem: Stock Span
+// Approach: Stack
+// Time Complexity: O(N)
+// Space Complexity: O(N)
+
 #include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
