@@ -8,7 +8,6 @@ public:
     vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
         stack<int> s;
         unordered_map<int, int> m;
-        vector<int> v;
 
         for(int i=nums2.size() -1; i>=0; i--) {
 
@@ -16,11 +15,9 @@ public:
                 s.pop();
             }
             if(s.empty()) {
-                v.push_back(-1);
                 m[nums2[i]] = -1;
             }
             else {
-                v.push_back(s.top());
                 m[nums2[i]] = s.top();
             }
             s.push(nums2[i]);
